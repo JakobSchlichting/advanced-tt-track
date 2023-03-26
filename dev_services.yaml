@@ -1,0 +1,11 @@
+procs:
+  database:
+    cmd: [
+      'podman',
+      'run', '-it',
+      '-e', 'POSTGRES_PASSWORD=test',
+      '-e', 'PGDATA=/var/lib/postgresql/data/pgdata',
+      '-v', 'pgdata:/var/lib/postgresql/data',
+      '-p', '5432:5432',
+      'postgres'
+    ]
